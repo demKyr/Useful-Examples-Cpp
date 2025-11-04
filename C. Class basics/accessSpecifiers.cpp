@@ -14,8 +14,9 @@ class MyClass {
         y = 1;
         z = 1;
     }   
-
+    
   public:    
+    MyClass();
     int x = 1;   
     int getY() { return y; }
     void setY(int num) { y = num; }
@@ -30,6 +31,12 @@ class MyClass {
     void callInitialise(){ initialise(); }
 };
 
+MyClass::MyClass() {
+    x = 0;
+    y = 0;
+    z = 0;
+}
+
 int MyClass::getZ() {
   return z;
 }
@@ -42,7 +49,7 @@ void MyClass::setZ(int num) {
 int main() {
     MyClass myObj;
     myObj.x = 25;  
-    //   myObj.y = 50;  // Not allowed (private)
+      // myObj.y = 50;  // Not allowed (private)
     myObj.setY(50);
     //   myObj.z = 100; // Not allowed (private)
     myObj.setZ(100);
