@@ -1,3 +1,9 @@
-*
-!*.cpp
-!makefile
+# 1. Ignore all files (recursively)
+**/*
+
+# 2. EXCEPTION: Allow directories to be tracked.
+!**/
+
+# 3. EXCEPTION: Re-include the specific files you want to keep
+!**/*.cpp
+!**/makefile
