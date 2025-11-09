@@ -9,6 +9,7 @@
 // search, removal, and insertion operations complexity: O(1) (on average, but O(n) in worst case)
 
 // TIP: You can make a map directly from a vector of pairs
+// TIP: if you are using map as a frequency counter, don't use count() to check presence, as it will create the key with value 0 if not present
 
 #include<iostream>
 #include <map>
