@@ -8,10 +8,12 @@
 // Unordered Map: Stores key-value pairs in no particular order, keys are unique.
 // search, removal, and insertion operations complexity: O(1) (on average, but O(n) in worst case)
 
+// TIP: You can make a map directly from a vector of pairs
 
 #include<iostream>
 #include <map>
 #include <unordered_map>
+#include <vector>
 
 using namespace std;
 
@@ -26,7 +28,9 @@ int main(){
     people.erase("Adele"); // removing key-value pair with key "Adele"
     cout<<"size: "<<people.size()<<endl; // prints 5
     cout<<"Is Bo present? "<<people.count("Bo")<<endl; // prints 1 (Bo is present)
+    cout<<"Is Bo present? "<<(people["Bo"]>0)<<endl; // prints 1 (Bo is present) ALTERNATIVE WAY TO CHECK PRESENCE
     cout<<"Is Adele present? "<<people.count("Adele")<<endl; // prints 0 (Adele is not present)
+    cout<<"Is Adele present? "<<(people["Adele"]>0)<<endl; // prints 0 (Adele is not present) ALTERNATIVE WAY TO CHECK PRESENCE
     people.clear(); // removes all key-value pairs
     cout<<"size: "<<people.size()<<endl; // prints 0
     cout<<"Is map empty? "<<people.empty()<<endl; // prints 1 (true)
@@ -38,5 +42,12 @@ int main(){
         cout << score.first << ": " << score.second << endl; // prints elements in no particular order
     cout<<"size: "<<scores.size()<<endl; // prints 3
     cout<<"Is Alice present? "<<scores.count("Alice")<<endl; // prints 1 (Alice is present)
+
+    // Creating a map from a vector of pairs
+    vector<pair<string, int>> vec = { {"John", 32}, {"Adele", 45}, {"Bo", 29} };
+    map<string, int> people2(vec.begin(), vec.end()); 
+    for(auto person:people2) 
+        cout << person.first << ": " << person.second << endl; // prints Adele: 45, Bo: 29, John: 32 (sorted by key)
+
     return 0;
 }

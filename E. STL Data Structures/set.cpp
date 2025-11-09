@@ -7,9 +7,12 @@
 // Unordered Set: Stores unique elements in no particular order, duplicate values are ignored.
 // search, removal, and insertion operations complexity: O(1) (on average, but O(n) in worst case)
 
+// TIP: You can make a set directly from a vector
+
 #include<iostream>
 #include <set>
 #include <unordered_set>
+#include <vector>
 
 using namespace std;
 
@@ -43,6 +46,13 @@ int main(){
     cout<<endl;
     cout<<"size: "<<fruits.size()<<endl; // prints 3
     cout<<fruits.count("Apple")<<endl; // prints 1 (Apple is present)
+
+    // Creating a set from a vector
+    vector<int> vec = {5, 2, 4, 3, 2, 4, 1};
+    set<int> numSet(vec.begin(), vec.end()); 
+    for (auto num : numSet) 
+        cout << num << " "; // prints 1, 2, 3, 4, 5 (sorted order, duplicates removed)
+    cout<<endl;
 
     return 0;
 }
