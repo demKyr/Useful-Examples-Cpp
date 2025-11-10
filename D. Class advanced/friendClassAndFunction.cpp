@@ -1,3 +1,6 @@
+// A friendly class is a class that is given access to the private and protected members of another class.
+// A friend function is a function that is given access to the private and protected members of a class.
+
 #include <iostream>
 using namespace std;
 
@@ -44,8 +47,8 @@ int main()
 {
     GFG g;
     FriendClass friendClassInstance;
-    friendClassInstance.display(g);
-    friendFunction(g);
-    cout << g;
+    friendClassInstance.display(g); // prints 10 99
+    friendFunction(g); // prints 10 99
+    cout << g; // prints 10 99
     return 0;
 }
