@@ -45,11 +45,11 @@ class specificCar: public Car, public ColourfulObject {
     public:
         string licensePlate = "XXX123";
         specificCar() { }
-        specificCar(string brand, string model, string licensePlate, string colour) {
-            this->brand = brand;
-            this->model = model;
-            this->licensePlate = licensePlate;
-            this->colour = colour;
+        specificCar(string brand_, string model_, string licensePlate_, string colour_) {
+            this->brand = brand_; // same as brand = brand_
+            this->model = model_;
+            this->licensePlate = licensePlate_;
+            this->colour = colour_;
         }
 };
 

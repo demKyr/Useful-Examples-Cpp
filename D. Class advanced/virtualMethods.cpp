@@ -1,5 +1,11 @@
-// Virtual functions ensure that the correct function is called for an object, 
+// https://www.geeksforgeeks.org/cpp/virtual-function-cpp/
+// Virtual functions enable runtime polymorphism, calling the correct function via a base class pointer or reference
+// they allow derived classes to provide their own implementation of base class functions
+// i.e. Virtual functions ensure that the correct function is called for an object, 
 // regardless of the type of reference (or pointer) used for the function call.
+
+// TIP: When a derived class object is deleted through a base class pointer, a virtual destructor in the base class ensures that both the derived and base class destructors are called
+// TIP: If a class has any virtual functions, its destructor should also be declared virtual
 
 #include <iostream>
 
