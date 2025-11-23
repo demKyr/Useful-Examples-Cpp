@@ -26,7 +26,11 @@ int main(){
     cout<<endl;
     cout<<"index of 10: "<<find(nums.begin(), nums.end(), 10) - nums.begin()<<endl; // prints the address of element 3
     cout<<"is 3 present? "<<(find(nums.begin(), nums.end(), 3) != nums.end())<<endl; // prints 1 (true)
+    nums.push_back(2);
+    nums.push_back(3);
+    nums.push_back(3);
     sort(nums.begin(), nums.end()); // sorting the vector
+    nums.erase(unique(nums.begin(), nums.end()), nums.end()); // removing duplicates after sorting, complexity: O(n)
     for(auto num:nums) 
         cout << num << " "; // prints 1 2 3 5 10
     cout<<endl;
