@@ -50,5 +50,15 @@ int main(){
     for(auto person:people2) 
         cout << person.first << ": " << person.second << endl; // prints Adele: 45, Bo: 29, John: 32 (sorted by key)
 
+    // multimap: allows duplicate keys
+    multimap<string, int, greater<string>> multi;
+    multi.insert({"apple", 1});
+    multi.insert({"banana", 2});
+    multi.insert(pair<string, int>("pear", 3)); // another way to insert
+    // multi["apple"] = 4; // ERROR: multimap does not support operator[]
+    multi.insert({"apple", 4}); // inserting another pair with key "apple"
+    for(auto item:multi)
+        cout << item.first << ": " << item.second << endl; // prints apple: 1, apple: 4, banana: 2, pear: 3 (sorted by key)
+
     return 0;
 }
