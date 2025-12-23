@@ -6,4 +6,6 @@
 - Chapter D: Class advanced
 - Chapter E: STL Data Structures
 - Chapter F: Algorithms
+  - Sorting
+  - Binary Search
   - DP
