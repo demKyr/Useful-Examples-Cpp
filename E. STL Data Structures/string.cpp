@@ -9,7 +9,7 @@ int main(){
     char str2[] = "World!";
     string str3 = str1 + " " + str2; // concatenation, complexity: O(n)
     cout << str3 << endl;
-
+    
     cout << "Length of str3: " << str3.length() << endl; // prints length of str3, complexity: O(1)
     cout << "Length of str3: " << str3.size() << endl; // same as length(), complexity: O(1)
 

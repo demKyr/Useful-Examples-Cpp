@@ -36,6 +36,9 @@ int main(){
     cout<<endl;
     cout<<numbers.count(3)<<endl; // prints 1 (3 is present)
     cout<<numbers.count(7)<<endl; // prints 0 (7 is not present
+    auto it = numbers.begin();
+    advance(it, 2); // iterator to the 3rd element (0-based index)
+    cout<<*it<<endl; // prints 3
     numbers.clear(); // removes all elements
     cout<<"size: "<<numbers.size()<<endl; // prints 0
     cout<<numbers.empty()<<endl; // prints 1 (true)
@@ -53,9 +56,9 @@ int main(){
     multiset<int> multiSet = {1, 2, 2, 3, 3, 4, 4, 4, 5};
     multiSet.insert(4); // adding another 4
     multiSet.erase(2); // removes all occurrences of 2
-    auto it = multiSet.find(3); // finds ONE occurrence of 3
-    if(it != multiSet.end())
-        multiSet.erase(it); // removes the found occurrence of 3
+    auto it2 = multiSet.find(3); // finds ONE occurrence of 3
+    if(it2 != multiSet.end())
+        multiSet.erase(it2); // removes the found occurrence of 3
     for (auto num : multiSet) 
         cout << num << " "; // prints 1, 4, 4, 4, 4, 5 (sorted order)
     cout<<endl;
